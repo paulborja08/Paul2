@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>Please select your preferred phone brand from the options below:</p>
+    <select>
+        <option value="" disabled selected>Select a brand</option>
+        <option value="apple">Apple</option> 
+        <option value="samsung">Samsung</option>
+        <option value="google">Google</option>
+        <option value="xiaomi">Xiaomi</option>
+        <option value="oneplus">OnePlus</option>
+        <script>   
+
+        document.querySelector('select').addEventListener('change', function() {
+            const urls = {
+                apple: 'https://www.apple.com/',
+                samsung: 'https://www.samsung.com/',
+                google: 'https://store.google.com/',
+                xiaomi: 'https://www.mi.com/',
+                oneplus: 'https://www.oneplus.com/'
+            };
+            const selected = this.value;
+            if (urls[selected]) {
+                window.open(urls[selected], '_blank');
+            }
+        });
+        </script>
+    </select>
+    <p>Thank you for making a selection!</p>    
+    <p>For more updates, visit our <a href="https://www.facebook.com/" target="_blank">Facebook page</a>.</p>
+    <p><a href="index.html">Go back to Home</a></p>
+</body>
+</html>
